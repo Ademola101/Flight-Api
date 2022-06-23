@@ -1,16 +1,17 @@
-const Flights = require("../models/Flight")
+const { json } = require("express");
+let Flights = require("../models/Flight")
 const getRandom = () => {
     return Math.floor(Math.random() * (100 - 1) + 1 )
-  }
+  };
   
 exports.example = (req, res) => {
     console.log("example")
     res.send("Flight example")
-}
+};
 
 exports.allFlight = (req,res) => {
     res.json(Flights.exampleModel)
-}
+};
 
 exports.addFlight = (req, res) => {
     const body = req.body
@@ -21,9 +22,9 @@ exports.addFlight = (req, res) => {
         price: body.price,
         date: new Date 
 
-    }
+    };
     Flights.exampleModel = Flights.exampleModel.concat(newFlight);
-    res.json(Flights.exampleModel)
+    res.json(Flights.exampleModel);
 };
 
 exports.getOneFlight = (req, res) => {
@@ -35,4 +36,14 @@ exports.getOneFlight = (req, res) => {
     else {
         res.json.status(404).end()
     }
+};
+
+exports.deleteOneFlight = (req, res) => {
+const id = Number(req.params.id);
+Flights.exampleModel = Flights.exampleModel.filter(flight => flight.id !== id);
+res.json(Flights.exampleModel)
+};
+
+exports.editOneFlight = (req, res) => {
+
 }
