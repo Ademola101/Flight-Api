@@ -42,6 +42,12 @@ npm install
 * NodeJS
 * ExpressJS
 
+👤 **Author **
+
+* GitHub: [@Ademola101](https://github.com/Ademola101)
+* Twitter: [@ademola_isr](https://twitter.com/ademola_isr)
+* LinkedIn: [Ademola Ogunmokun](https://linkedin.com/in/ademola-ogunmokun-492575203)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
