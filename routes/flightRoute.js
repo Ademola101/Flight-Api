@@ -13,7 +13,7 @@ router.get("/api/flights/:id", controller.getOneFlight);
 
 router.delete("/api/flights/:id", controller.deleteOneFlight);
 
-router.puts("/api/flights/:id", controller.editOneFlight)
+router.put("/api/flights/:id", controller.editOneFlight)
 
 module.exports = router;
 

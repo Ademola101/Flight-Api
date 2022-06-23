@@ -34,7 +34,7 @@ exports.getOneFlight = (req, res) => {
         res.json(flight)
     }
     else {
-        res.json.status(404).end()
+        res.status(404).end()
     }
 };
 
@@ -45,5 +45,21 @@ res.json(Flights.exampleModel)
 };
 
 exports.editOneFlight = (req, res) => {
+const id = Number(req.params.id);
+let flight = Flights.exampleModel.filter(flight => flight.id === id);
+const {fid, title, time,price, date} = req.body
+if (flight) {
+    let updated = {
+        title,
+        time,
+        price
+    };
 
+    let targeIndex = Flights.exampleModel.indexOf(flight)
+    Flights.exampleModel.splice(targeIndex,1,updated);
+    res.status(204).end()
+}
+else {
+    res.status(404).end()
+}
 }
