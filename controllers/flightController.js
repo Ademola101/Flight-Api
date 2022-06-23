@@ -24,4 +24,15 @@ exports.addFlight = (req, res) => {
     }
     Flights.exampleModel = Flights.exampleModel.concat(newFlight);
     res.json(Flights.exampleModel)
+};
+
+exports.getOneFlight = (req, res) => {
+    const id = Number(req.params.id);
+    const flight =  Flights.exampleModel.filter(flight => flight.id === id );
+    if (flight) {
+        res.json(flight)
+    }
+    else {
+        res.json.status(404).end()
+    }
 }

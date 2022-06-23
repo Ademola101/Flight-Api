@@ -9,5 +9,7 @@ router.get("/api/allflight", controller.allFlight);
 
 router.post("/api/allflight", controller.addFlight);
 
+router.get("/api/allflight/:id", controller.getOneFlight)
+
 module.exports = router;
 
